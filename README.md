@@ -10,25 +10,28 @@
 
 
 ## 2. 复现精度
-| Model <br> <br>    |Pretrain  <br> <br>    |  Res <br>(𝐻 × 𝑊 ) | # Frames <br> 𝑇  | UCF101 <br> Acc1 (%)   
-| :-----------: | :-----------: | :-----------: | :-----------: | :-----------:
-| TokShift | ImageNet-21k | 256 × 256 | 8 | <strong>92.81</strong> |
+| Model <br> <br>    |Dataset <br> <br> |Pretrain  <br> <br>    |  Res <br>(𝐻 × 𝑊 ) | # Frames <br> 𝑇 | Target <br> Acc1 (%)    | Our <br> Acc1 (%)   
+| :-----------: | :-----------: | :-----------: | :-----------: | :-----------: | :-----------: | :-----------: 
+| TokShift | UCF101 | ImageNet-21k | 256 × 256 | 8 | <strong>91.65</strong> | <strong>92.81</strong>
 
-## 3. 数据集和预训练模型
+- 训练日志：[Log](https://github.com/zwtu/TokShift-Transformer-Paddle/blob/main/runs/TokenShift_ucf101_256_16_256_aug0.1_0.0609/train_log.log)
+- 模型权重：[Google Drive](https://drive.google.com/drive/folders/1k_TpAqaJZYJE8C5g5pT9phdyk9DrY_XL?usp=sharing)
+
+## 3. 数据集和预训练权重
 
 1. 下载数据集 [UCF101](https://www.crcv.ucf.edu/data/UCF101.php) or [[PaddleVideo] UCF101视频分类数据集](https://aistudio.baidu.com/aistudio/datasetdetail/105621)，存放路径 ``` data/ucf101/ ```
 
 2. 下载 raw annotations 并生成所需格式的 video annotations
 
     ```
-    cd ~/data/ucf101/
+    cd data/ucf101/
     bash download_annotations.sh
     python build_ucf101_file_list.py ~/PaddleVideo-develop/data/ucf101/UCF-101/ --level 2 --format videos --out_list_path ./
     ```
 
 3. <strong>optional</strong> 视频提帧 生成所需格式的 frame annotations
     ```
-    cd ~/data/ucf101/
+    cd data/ucf101/
     !python extract_rawframes.py ./videos/ ./rawframes/ --level 2 --ext avi
     !python build_ucf101_file_list.py rawframes/ --level 2 --format rawframes --out_list_path ./
     ```
@@ -64,7 +67,7 @@
     python3 main.py --amp -c configs/recognition/token_transformer/tokShift_transformer_ucf101_256_videos.yaml --validate --seed=1234
     ```
 
-- 部分训练日志：
+- 部分[训练日志](https://github.com/zwtu/TokShift-Transformer-Paddle/blob/main/runs/TokenShift_ucf101_256_16_256_aug0.1_0.0609/train_log.log)：
     ```
     /home/aistudio/PaddleVideo-develop
     Loading weights
@@ -92,7 +95,7 @@
     !python3 main.py --amp -c configs/recognition/token_transformer/tokShift_transformer_ucf101_256_videos.yaml --test --seed=1234 -w 'output/TokenShift_ucf101_256_16_256_aug0.1_0.0609/TokenShift_ucf101_256_16_256_aug0.1_0.0609_best.pdparams'
     ```
 
-- 部分测试日志：
+- 部分[测试日志](https://github.com/zwtu/TokShift-Transformer-Paddle/blob/main/runs/TokenShift_ucf101_256_16_256_aug0.1_0.0609/test_log.log)：
     ```
     W0422 14:31:53.689891 31948 device_context.cc:447] Please NOTE: device: 0, GPU Compute Capability: 7.0, Driver API Version: 10.1, Runtime API Version: 10.1
     W0422 14:31:53.695667 31948 device_context.cc:465] device: 0, cuDNN Version: 7.6.
@@ -125,7 +128,7 @@
     python3 tools/predict.py -c configs/recognition/token_transformer/tokShift_transformer_ucf101_256_videos.yaml -i 'BrushingTeeth.avi' --model_file ./inference/TokenShiftVisionTransformer.pdmodel --params_file ./inference/TokenShiftVisionTransformer.pdiparams
     ```
     config 给出模型推理设置 ```cfg.INFERENCE```
-    输入视频为 ```BrushingTeeth.avi``` 主要输出结果如下:
+    [输入视频](https://github.com/zwtu/TokShift-Transformer-Paddle/blob/main/data/BrushingTeeth.avi)为 ```BrushingTeeth.avi``` 主要[输出结果](https://github.com/zwtu/TokShift-Transformer-Paddle/blob/main/runs/TokenShift_ucf101_256_16_256_aug0.1_0.0609/inference_log.log)如下:
     ```
     Current video file: BrushingTeeth.avi
 	top-1 class: 19
@@ -137,4 +140,9 @@
 本项目的发布受[Apache 2.0 license](https://github.com/zwtu/TokShift-Transformer-Paddle/blob/main/LICENSE)许可认证。
 
 ## 7. 致谢
-感谢百度飞浆团队提供的算力支持！
+非常感谢 百度 PaddlePaddle AI Studio 提供的算力支持！
+
+## 我们
+团队名称: Team X
+学校: NJUST
+作者: [zwtu](https://github.com/zwtu) / [keke chen](https://github.com/ping-High) / [zzy](https://github.com/klinic)
