@@ -3,7 +3,7 @@
 
 
 ## 1. 简介
-![Token Shift Transformer](https://github.com/VideoNetworks/TokShift-Transformer/blob/main/demo/tokshift.PNG?raw=true)
+![Token Shift Transformer](https://github.com/zwtu/TokShift-Transformer-Paddle/blob/main/images/model_structure.png?raw=true)
 <strong>Paper：</strong> Zhang H, Hao Y, Ngo C W. [Token shift transformer for video classification]((https://paperswithcode.com/paper/token-shift-transformer-for-video))[C]//Proceedings of the 29th ACM International Conference on Multimedia. 2021: 917-925.
 <strong>Code Reference：</strong>[https://github.com/VideoNetworks/TokShift-Transformer](https://github.com/VideoNetworks/TokShift-Transformer)   
 <strong>复现目标：</strong>UCF101数据集，ImageNet-21k预训练模型条件下，8x256x256输入尺寸，Top1=91.65  
