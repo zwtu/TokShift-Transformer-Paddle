@@ -152,10 +152,10 @@
     bash test_tipc/prepare.sh ./test_tipc/configs/TokenShift/train_amp_infer_python.txt 'lite_train_lite_infer'
     ```
 
-- 运行 ```test_train_inference_python.sh```， 具体参数设置修改于```test_tipc/configs/TokenShift/train_infer_python.txt```
+- 运行 ```test_train_inference_python.sh```， 具体参数设置修改于```test_tipc/configs/TokenShift/train_amp_infer_python.txt```
 
     ```
-    bash test_tipc/test_train_inference_python.sh test_tipc/configs/TokenShift/train_infer_python.txt 'lite_train_lite_infer'
+    bash test_tipc/test_train_inference_python.sh test_tipc/configs/TokenShift/train_amp_infer_python.txt 'lite_train_lite_infer'
     ```
 
 - TIPC [运行log](https://github.com/zwtu/TokShift-Transformer-Paddle/blob/main/runs/TIPC/results_python.log) 
