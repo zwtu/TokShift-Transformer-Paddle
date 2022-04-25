@@ -1,0 +1,4 @@
+/home/aistudio/PaddleVideo-develop/data/ucf101/UCF-101-lite/ApplyEyeMakeup/v_ApplyEyeMakeup_g01_c01.avi 0
+/home/aistudio/PaddleVideo-develop/data/ucf101/UCF-101-lite/ApplyEyeMakeup/v_ApplyEyeMakeup_g01_c02.avi 0
+/home/aistudio/PaddleVideo-develop/data/ucf101/UCF-101-lite/ApplyEyeMakeup/v_ApplyEyeMakeup_g01_c03.avi 0
+/home/aistudio/PaddleVideo-develop/data/ucf101/UCF-101-lite/ApplyEyeMakeup/v_ApplyEyeMakeup_g01_c04.avi 0
