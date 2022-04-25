@@ -152,6 +152,8 @@
     bash test_tipc/test_train_inference_python.sh test_tipc/configs/TokenShift/train_infer_python.txt 'lite_train_lite_infer'
     ```
 
+- TIPC [运行log](https://github.com/zwtu/TokShift-Transformer-Paddle/blob/main/runs/TIPC/results_python.log) 
+
 ## 7. LICENSE
 本项目的发布受[Apache 2.0 license](https://github.com/zwtu/TokShift-Transformer-Paddle/blob/main/LICENSE)许可认证。
 
