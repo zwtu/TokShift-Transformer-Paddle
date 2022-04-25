@@ -4,8 +4,11 @@
 
 ## 1. 简介
 ![Token Shift Transformer](https://github.com/zwtu/TokShift-Transformer-Paddle/blob/main/images/model_structure.png?raw=true)
+
 <strong>Paper：</strong> Zhang H, Hao Y, Ngo C W. [Token shift transformer for video classification]((https://paperswithcode.com/paper/token-shift-transformer-for-video))[C]//Proceedings of the 29th ACM International Conference on Multimedia. 2021: 917-925.
-<strong>Code Reference：</strong>[https://github.com/VideoNetworks/TokShift-Transformer](https://github.com/VideoNetworks/TokShift-Transformer)   
+
+<strong>Code Reference：</strong>[https://github.com/VideoNetworks/TokShift-Transformer](https://github.com/VideoNetworks/TokShift-Transformer)
+
 <strong>复现目标：</strong>UCF101数据集，ImageNet-21k预训练模型条件下，8x256x256输入尺寸，Top1=91.65  
 
 
@@ -125,7 +128,7 @@
 
 - 模型静态推理
     ```
-    python3 tools/predict.py -c configs/recognition/token_transformer/tokShift_transformer_ucf101_256_videos.yaml -i 'BrushingTeeth.avi' --model_file ./inference/TokenShiftVisionTransformer.pdmodel --params_file ./inference/TokenShiftVisionTransformer.pdiparams
+    python3 tools/predict.py -c configs/recognition/token_transformer/tokShift_transformer_ucf101_256_videos.yaml -i './data/BrushingTeeth.avi' --model_file ./inference/TokenShiftVisionTransformer.pdmodel --params_file ./inference/TokenShiftVisionTransformer.pdiparams
     ```
     config 给出模型推理设置 ```cfg.INFERENCE```
     [输入视频](https://github.com/zwtu/TokShift-Transformer-Paddle/blob/main/data/BrushingTeeth.avi)为 ```BrushingTeeth.avi``` 主要[输出结果](https://github.com/zwtu/TokShift-Transformer-Paddle/blob/main/runs/TokenShift_ucf101_256_16_256_aug0.1_0.0609/inference_log.log)如下:
@@ -136,10 +139,23 @@
     ```
 
 
-## 6. LICENSE
+## 6.TIPC
+
+- 安装日志工具
+    ```
+    pip install https://paddleocr.bj.bcebos.com/libs/auto_log-1.2.0-py3-none-any.whl
+    ```
+
+- 运行 ```test_train_inference_python.sh```， 具体参数设置修改于```test_tipc/configs/TokenShift/train_infer_python.txt```
+
+    ```
+    bash test_tipc/test_train_inference_python.sh test_tipc/configs/TokenShift/train_infer_python.txt 'lite_train_lite_infer'
+    ```
+
+## 7. LICENSE
 本项目的发布受[Apache 2.0 license](https://github.com/zwtu/TokShift-Transformer-Paddle/blob/main/LICENSE)许可认证。
 
-## 7. 致谢
+## 8. 致谢
 非常感谢 百度 PaddlePaddle AI Studio 提供的算力支持！
 
 ## 我们
