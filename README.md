@@ -146,6 +146,12 @@
     pip install https://paddleocr.bj.bcebos.com/libs/auto_log-1.2.0-py3-none-any.whl
     ```
 
+- 运行 ```prepare.sh```
+
+    ```
+    bash test_tipc/prepare.sh ./test_tipc/configs/TokenShift/train_amp_infer_python.txt 'lite_train_lite_infer'
+    ```
+
 - 运行 ```test_train_inference_python.sh```， 具体参数设置修改于```test_tipc/configs/TokenShift/train_infer_python.txt```
 
     ```
