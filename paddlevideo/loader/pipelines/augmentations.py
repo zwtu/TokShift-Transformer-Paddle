@@ -1193,7 +1193,7 @@ class GroupResize(object):
 
 
 @PIPELINES.register()
-class _ColorJitter(object):
+class ColorJitter(object):
     """Randomly change the brightness, contrast, saturation and hue of an image.
     """
 
