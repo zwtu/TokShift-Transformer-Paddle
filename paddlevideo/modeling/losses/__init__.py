@@ -19,9 +19,8 @@ from .depth_loss import ADDSLoss
 from .transnetv2_loss import TransNetV2Loss
 from .actbert_loss import ActBertLoss
 from .asrf_loss import ASRFLoss
-from .label_smoothing_cross_entropy import LabelSmoothingCrossEntropy
 
 __all__ = [
     'CrossEntropyLoss', 'BMNLoss', 'TransNetV2Loss', 'ActBertLoss', 'ADDSLoss',
-    'BaseWeightedLoss', 'ASRFLoss', 'LabelSmoothingCrossEntropy'
+    'BaseWeightedLoss', 'ASRFLoss'
 ]
